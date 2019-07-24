@@ -10,7 +10,7 @@ with base as (
 
     select
     
-        id as adset_id,
+        id::varchar(256) as adset_id,
         nullif(name,'') as name,
         account_id,
         campaign_id,

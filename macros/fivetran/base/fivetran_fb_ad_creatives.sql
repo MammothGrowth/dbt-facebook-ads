@@ -10,7 +10,7 @@ with base as (
 
     select
 
-        id as creative_id,
+        id::varchar(256) as creative_id,
         coalesce(page_link,template_page_link) as url,
         coalesce(page_link,template_page_link) as base_url,
         '/' || {{ dbt_utils.get_url_path('coalesce(page_link,template_page_link)') }} as url_path,

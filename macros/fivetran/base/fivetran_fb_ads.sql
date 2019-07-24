@@ -14,7 +14,7 @@ with base as (
 
     select
     
-        id as ad_id,
+        id::varchar(256) as ad_id,
         account_id,
         ad_set_id as adset_id,
         campaign_id,

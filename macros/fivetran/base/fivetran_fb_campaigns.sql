@@ -9,7 +9,7 @@
 
 select distinct
 
-    id as campaign_id,
+    id::varchar(256) as campaign_id,
     nullif(name,'') as name
 
 from
