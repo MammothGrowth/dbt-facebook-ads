@@ -31,8 +31,7 @@ with base as (
         unique_inline_link_clicks,
         row_number() over (partition by date_day, ad_id order by _FIVETRAN_SYNCED desc) as row_num
   
-    from
-        {{ var('ads_insights_table') }}
+    from {{source('facebook_ads', 'INSIGHTS')}}
 ),
 
 final as (

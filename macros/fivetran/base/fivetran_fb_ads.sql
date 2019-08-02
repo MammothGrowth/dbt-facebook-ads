@@ -24,8 +24,7 @@ with base as (
         updated_time as updated_at,
         row_number() over (partition by ad_id, updated_at order by _FIVETRAN_SYNCED desc) as row_num
     
-    from
-        {{ var('ads_table') }}
+    from {{source('facebook_ads', 'AD_HISTORY')}}
 ),
 
 final as (

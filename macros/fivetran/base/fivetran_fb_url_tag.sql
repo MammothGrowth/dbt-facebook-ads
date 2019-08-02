@@ -22,9 +22,7 @@ with base as (
         nullif(key,'') as key,
         creative_id,
         nullif(value,'') as value
-
-    from
-        {{ var('url_tag_table') }}
+    from {{source('facebook_ads', 'URL_TAG')}}
 
 ),
 

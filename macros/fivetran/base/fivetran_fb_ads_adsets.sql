@@ -18,8 +18,7 @@ with base as (
         nullif(effective_status,'') as effective_status,
         row_number() over (partition by id, name, account_id, campaign_id, created_time order by _FIVETRAN_SYNCED desc) as row_num
 
-    from
-    {{ var('adsets_table') }}
+    from {{source('facebook_ads', 'AD_SET_HISTORY')}}
 ),
 
 final as (

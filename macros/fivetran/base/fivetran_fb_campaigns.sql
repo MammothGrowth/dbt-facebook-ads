@@ -12,7 +12,6 @@ select distinct
     id::varchar(256) as campaign_id,
     nullif(name,'') as name
 
-from
-    {{ var('campaigns_table') }}
+from {{source('facebook_ads', 'CAMPAIGN_HISTORY')}}
 
 {% endmacro %}
