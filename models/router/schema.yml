@@ -32,9 +32,12 @@ models:
   - name: campaign_id
     tests:
     - not_null
-    - relationships:
-        field: campaign_id
-        to: ref('fb_campaigns')
+    # Fivetran does not sync all history for the Campaign etc dimensions, 
+    # but it does for the performance report
+    # so cannot assume that all campaign_id exists in fb_campaig
+    # - relationships:
+    #     field: campaign_id
+    #     to: ref('fb_campaigns')
 - name: fb_campaigns
   columns:
   - name: campaign_id

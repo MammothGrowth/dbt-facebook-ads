@@ -16,6 +16,8 @@ WITH ranked AS(
         row_number() OVER(PARTITOIN BY campaign_id ORDER BY _fivetran_synced desc) as latest
 
     from {{source('facebook_ads', 'CAMPAIGN_HISTORY')}}
+    union
+    SELECT -1, 'Unknown', 1
 )
 SELECT 
     *
