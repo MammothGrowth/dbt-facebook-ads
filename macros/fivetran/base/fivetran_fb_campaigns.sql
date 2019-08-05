@@ -13,7 +13,7 @@ WITH ranked AS(
 
         id::varchar(256) as campaign_id,
         nullif(name,'') as name,
-        row_number() OVER(PARTITOIN BY campaign_id ORDER BY _fivetran_synced desc) as latest
+        row_number() OVER(partition BY campaign_id ORDER BY _fivetran_synced desc) as latest
 
     from {{source('facebook_ads', 'CAMPAIGN_HISTORY')}}
     union
