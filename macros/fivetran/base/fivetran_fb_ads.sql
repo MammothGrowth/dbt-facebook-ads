@@ -22,7 +22,7 @@ with base as (
         creative_id::bigint as creative_id,
         created_time as created_at,
         updated_time as updated_at,
-        row_number() over (partition by ad_id, updated_at order by _FIVETRAN_SYNCED desc) as row_num
+        row_number() over (partition by ad_id order by _FIVETRAN_SYNCED desc) as row_num
     
     from {{source('facebook_ads', 'AD_HISTORY')}}
 ),

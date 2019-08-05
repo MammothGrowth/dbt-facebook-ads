@@ -7,11 +7,19 @@
 
 {% macro default__fivetran_fb_ads_campaigns() %}
 
-select distinct
+WITH ranked AS(
 
-    id::varchar(256) as campaign_id,
-    nullif(name,'') as name
+    select
 
-from {{source('facebook_ads', 'CAMPAIGN_HISTORY')}}
+        id::varchar(256) as campaign_id,
+        nullif(name,'') as name,
+        row_number() OVER(PARTITOIN BY campaign_id ORDER BY _fivetran_synced desc) as latest
+
+    from {{source('facebook_ads', 'CAMPAIGN_HISTORY')}}
+)
+SELECT 
+    *
+FROM ranked
+WHERE latest = 1
 
 {% endmacro %}
