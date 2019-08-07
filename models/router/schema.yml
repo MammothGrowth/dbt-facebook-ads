@@ -11,6 +11,7 @@ models:
   - name: creative_id
     tests:
     - relationships:
+        severity: warn # often in fivetran the dimension tables can be out of sync with the fact
         field: creative_id
         to: ref('fb_ad_creatives')
 - name: fb_ads
@@ -19,6 +20,7 @@ models:
     tests:
     - not_null
     - relationships:
+        severity: warn # often in fivetran the dimension tables can be out of sync with the fact
         field: creative_id
         to: ref('fb_ad_creatives')
   - name: ad_id
