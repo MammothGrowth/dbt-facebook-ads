@@ -16,7 +16,7 @@ with base as (
         nullif(account_name,'') as account_name,
         nullif(ad_id::VARCHAR(256),'') as ad_id,
         nullif(adset_id::VARCHAR(256),'') as adset_id,
-        COALESCE(nullif(campaign_id::VARCHAR(256),''), -1) as campaign_id,
+        COALESCE(nullif(campaign_id::VARCHAR(256),''), '-1') as campaign_id,
         impressions,
         clicks,
         unique_clicks,
