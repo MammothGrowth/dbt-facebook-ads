@@ -13,7 +13,8 @@
 "utm_campaign": "utm_campaign",
 "utm_content": "utm_content",
 "utm_term": "utm_term",
-"fbaid": "ad_id"
+"mg_fbaid": "mg_fbaid",
+"fbaid": "fbaid"
 } %}
 
 with base as (

@@ -19,7 +19,7 @@ fb_keyword_performance_agg as (
         utm_campaign,
         utm_content,
         utm_term,
-        ad_id,
+        fbaid,
         campaign_name,
         'facebook ads' as platform,
         sum(clicks) as clicks,
