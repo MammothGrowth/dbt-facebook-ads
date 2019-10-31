@@ -10,6 +10,7 @@ fb_keyword_performance_agg as (
     
         date_day as campaign_date,
         adset_id as ad_group_id,
+        ad_id,
         adset_name as ad_group_name,
         campaign_id,
         url_host,
