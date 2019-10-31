@@ -33,6 +33,7 @@ with ads1 as (
         creatives.utm_campaign,
         creatives.utm_content,
         creatives.utm_term,
+        creatives.ad_id,
         ads.unique_id as ad_unique_id,
         ads.name as ad_name,
         campaigns.name as campaign_name,
