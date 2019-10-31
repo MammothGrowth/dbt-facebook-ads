@@ -9,7 +9,6 @@ fb_keyword_performance_agg as (
     select 
     
         date_day as campaign_date,
-        ad_id as ad_id,
         adset_id as ad_group_id,
         adset_name as ad_group_name,
         campaign_id,
