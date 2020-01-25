@@ -28,7 +28,7 @@ select
     inline_post_engagement,
     unique_inline_link_clicks
 
-from {{ var('ads_insights_table') }}
+from {{ source('facebook_ads', 'ads_insights') }}
 WHERE nullif(campaign_id,'') is not null 
 
 

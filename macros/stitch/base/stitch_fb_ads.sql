@@ -21,7 +21,7 @@ select distinct
     created_time as created_at,
     updated_time as updated_at
     
-from {{ var('ads_table') }}
+from {{ source('facebook_ads', 'ads') }}
 
 {% endmacro %}
 
@@ -39,6 +39,6 @@ select distinct
     created_time as created_at,
     updated_time as updated_at
     
-from {{ var('ads_table') }}
+from {{ source('facebook_ads', 'ads') }}
 
 {% endmacro %}

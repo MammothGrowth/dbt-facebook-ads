@@ -16,6 +16,6 @@ select
     created_time,
     nullif(effective_status,'') as effective_status
     
-from {{ var('adsets_table') }}
+from {{ source('facebook_ads', 'adsets') }}
 
 {% endmacro %}
