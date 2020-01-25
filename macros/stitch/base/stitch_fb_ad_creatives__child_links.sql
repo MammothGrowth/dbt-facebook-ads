@@ -63,7 +63,7 @@ select * from aggregated
 
 with base as (
     
-    select * from {{ var('ad_creatives_table') }}
+    select * from {{ source('facebook_ads', 'adcreative') }}
     
 ),
 
