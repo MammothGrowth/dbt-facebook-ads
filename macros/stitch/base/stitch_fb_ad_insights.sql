@@ -22,8 +22,6 @@ select
     frequency,
     reach,
     nullif(objective,'') as objective,
-    canvas_avg_view_percent,
-    canvas_avg_view_time,
     inline_link_clicks,
     inline_post_engagement,
     unique_inline_link_clicks
